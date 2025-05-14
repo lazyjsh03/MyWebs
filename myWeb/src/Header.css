@@ -1,0 +1,16 @@
+.title {
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  background-color: black;
+  color: white;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.menu {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
