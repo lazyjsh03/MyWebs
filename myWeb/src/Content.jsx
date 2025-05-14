@@ -3,17 +3,21 @@ import "./Content.css";
 const Content = () => {
   const handleAddTask = () => {
     // Logic to add a task
-    tasks.push({
-      id: tasks.length + 1,
-      content: document.querySelector(".inputBox").value,
-      completed: false,
-    });
-    console.log(tasks);
+    if (document.querySelector(".inputBox").value !== "") {
+      tasks.push({
+        id: tasks.length + 1,
+        content: document.querySelector(".inputBox").value,
+        completed: false,
+      });
+      console.log(tasks);
+      document.querySelector(".inputBox").value = "";
+    }
   };
   const tasks = [];
+
   return (
     <div className="content">
-      <section className="addTask">
+      <section className="addTaskBox">
         <input
           className="inputBox"
           type="text"
