@@ -1,6 +1,7 @@
 import "./Content.css";
 
 const Content = () => {
+  const tasks = [];
   const handleAddTask = () => {
     // Logic to add a task
     if (document.querySelector(".inputBox").value !== "") {
@@ -13,7 +14,6 @@ const Content = () => {
       document.querySelector(".inputBox").value = "";
     }
   };
-  const tasks = [];
 
   return (
     <div className="content">
@@ -23,9 +23,20 @@ const Content = () => {
           type="text"
           placeholder="Type task here..."
         />
-        <button className="addButton" onClick={handleAddTask}>
+        <button
+          className="addButton"
+          onClick={handleAddTask}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleAddTask();
+            }
+          }}
+        >
           Add
         </button>
+      </section>
+      <section className="taskListBox">
+        <ul className="taskList">{tasks[0]}</ul>
       </section>
     </div>
   );

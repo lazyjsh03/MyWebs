@@ -3,6 +3,11 @@
   margin-left: 20px;
 }
 
+.addTaskBox{
+  display: flex;
+  justify-content: center;
+}
+
 .inputBox {
   padding: 0;
   width: 400px;
